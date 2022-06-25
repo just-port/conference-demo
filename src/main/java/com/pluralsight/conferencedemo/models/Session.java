@@ -17,4 +17,19 @@ public class Session {
   public Session() {
   }
 
+  public Long getSession_id() {
+    return session_id;
+  }
+
+  public void setSession_id(Long session_id) {
+    this.session_id = session_id;
+  }
+
+  public String getSession_name() {
+    return session_name;
+  }
+
+  public void setSession_name(String session_name) {
+    this.session_name = session_name;
+  }
 }
