@@ -1,20 +1,13 @@
 package com.pluralsight.conferencedemo.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.util.ArrayList;
+
+import javax.persistence.*;
 import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 
 @Entity(name = "sessions")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Session {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long session_id;
@@ -27,7 +20,7 @@ public class Session {
       name = "session_speakers",
       joinColumns = @JoinColumn(name = "session_id"),
       inverseJoinColumns = @JoinColumn(name = "speaker_id"))
-    private List<Speaker> speakers = new ArrayList<>();
+    private List<Speaker> speakers;
 
     public Session() {
     }

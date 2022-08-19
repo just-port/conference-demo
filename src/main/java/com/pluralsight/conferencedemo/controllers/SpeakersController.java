@@ -19,11 +19,11 @@ import org.springframework.web.client.HttpStatusCodeException;
 
 @RestController
 @RequestMapping("/api/v1/speakers")
-public class SpeakerController {
+public class SpeakersController {
 
     private final SpeakerRepository speakerRepository;
 
-    public SpeakerController(SpeakerRepository speakerRepository) {
+    public SpeakersController(SpeakerRepository speakerRepository) {
         this.speakerRepository = speakerRepository;
     }
 

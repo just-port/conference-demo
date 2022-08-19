@@ -13,35 +13,26 @@
   </build>
   <dependencies>
     <dependency>
+      <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <dependency>
       <groupId>org.springframework.boot</groupId>
-    </dependency>
-
-    <dependency>
-      <artifactId>postgresql</artifactId>
-      <groupId>org.postgresql</groupId>
-      <version>42.4.1</version>
-    </dependency>
-
-    <dependency>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
-      <groupId>org.springframework.boot</groupId>
-      <version>2.7.2</version>
+    </dependency>
+    <dependency>
+      <groupId>org.postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <scope>runtime</scope>
     </dependency>
 
     <dependency>
-      <artifactId>spring-boot-starter-actuator</artifactId>
       <groupId>org.springframework.boot</groupId>
-      <version>2.7.2</version>
-    </dependency>
-
-
-    <dependency>
       <artifactId>spring-boot-starter-test</artifactId>
-      <groupId>org.springframework.boot</groupId>
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <description>Demo project for Spring Boot</description>
   <groupId>com.pluralsight</groupId>
   <modelVersion>4.0.0</modelVersion>

@@ -2,23 +2,18 @@ package com.pluralsight.conferencedemo.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Lob;
-import javax.persistence.ManyToMany;
 import org.hibernate.annotations.Type;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "speakers")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Speaker {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long speaker_id;
+
     private String first_name;
     private String last_name;
     private String title;
@@ -26,11 +21,12 @@ public class Speaker {
     private String speaker_bio;
 
     @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
+    @Type(type="org.hibernate.type.BinaryType")
     private byte[] speaker_photo;
+
     @ManyToMany(mappedBy = "speakers")
     @JsonIgnore
-    private List<Session> sessions = new ArrayList<>();
+    private List<Session> sessions;
 
     public Speaker() {
     }
